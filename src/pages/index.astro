@@ -1,9 +1,20 @@
 ---
 import Layout from "../layouts/default.astro";
+import Album from "../components/Album.astro";
+import AlbumShelf from "../components/AlbumShelf.astro";
 ---
 
 <Layout>
-  <div>
-    <h1>CONTENT</h1>
-  </div>
+  <AlbumShelf>
+    <Album />
+    <Album />
+    <Album />
+    <Album />
+    <Album />
+  </AlbumShelf>
+  <AlbumShelf>
+    <Album />
+    <Album />
+    <Album />
+  </AlbumShelf>
 </Layout>

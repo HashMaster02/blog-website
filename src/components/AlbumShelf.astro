@@ -1,0 +1,51 @@
+---
+
+---
+
+<div class="shelf">
+  <h1>Albums</h1>
+  <div class="album-scroller">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .shelf {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-family: "Manrope";
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 2rem;
+  }
+
+  .album-scroller {
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Webkit browsers scrollbar styling */
+  .album-scroller::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .album-scroller::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .album-scroller::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+  }
+</style>
