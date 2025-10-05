@@ -264,6 +264,7 @@ const props = Astro.props;
     border: 0;
     font-size: 100%;
     font-family: "Domine";
+    font: inherit;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -315,8 +316,9 @@ const props = Astro.props;
   }
 
   .content {
+    display: grid;
+    gap: 3rem 0;
     padding: 1rem var(--global-side-padding-mobile);
-    flex-grow: 1;
   }
 
   a {
@@ -448,7 +450,8 @@ const props = Astro.props;
     footer {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr 2fr;
-      padding: 1rem var(--global-side-padding-desktop);
+      padding: 2rem var(--global-side-padding-desktop) 4rem
+        var(--global-side-padding-desktop);
 
       svg {
         max-width: 300px;
