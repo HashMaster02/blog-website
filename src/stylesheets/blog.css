@@ -1,0 +1,38 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  all: revert;
+}
+
+.container {
+  display: grid;
+  font-size: var(--body-mobile);
+}
+
+.blog {
+  font-family: "Domine";
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+
+.blog-title {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid var(--accent);
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 810px) {
+  .container {
+    font-size: var(--body-desktop);
+    grid-template-columns: 3fr 2fr;
+  }
+}

@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/default.astro";
+import { getCollection } from "astro:content";
+import "../../stylesheets/blog.css"; // using imported stylesheet for <Content> element compatibility
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection("blog");
+
+  return blogPosts.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout>
+  <div class="container">
+    <div class="blog">
+      <h1 class="blog-title">{post.data.title}</h1>
+      <div class="divider"></div>
+      <Content />
+    </div>
+    <div class="up-next">
+      <p>Up Next</p>
+      <ul class="tracklist"></ul>
+    </div>
+  </div>
+</Layout>
