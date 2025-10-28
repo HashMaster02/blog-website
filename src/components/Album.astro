@@ -1,16 +1,16 @@
 ---
-import CoverImage from "../images/cover_1.jpg";
-
-const { albumTitle, href } = Astro.props;
+const { albumTitle, cover, year, type, href } = Astro.props;
 ---
 
 <div class="album">
   <div class="cover-image">
-    <a href={href}><img src={CoverImage.src} alt="" /></a>
+    <a href={href}><img src={cover} alt="" /></a>
   </div>
   <div class="album-details">
-    <p class="title"><a href="#">{albumTitle}</a></p>
-    <p class="release-date">Album • 2022</p>
+    <p class="title"><a href={href}>{albumTitle}</a></p>
+    <p class="release-date">
+      {type.charAt(0).toUpperCase() + type.slice(1)} • {year}
+    </p>
   </div>
 </div>
 
