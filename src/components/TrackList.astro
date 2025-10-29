@@ -1,15 +1,25 @@
 ---
 import TrackListItem from "./TrackListItem.astro";
+
+const { blogs } = Astro.props;
+const sortedBlogs = [...blogs].sort((a, b) => a.data.track - b.data.track);
 ---
 
 <div class="tracklist">
   <ul class="blogs">
-    <TrackListItem title="Title" runtime="3:15" />
-    <TrackListItem title="Title" runtime="3:15" />
-    <TrackListItem title="Title" runtime="3:15" />
-    <TrackListItem title="Title" runtime="3:15" />
-    <TrackListItem title="Title" runtime="3:15" />
-    <TrackListItem title="Title" runtime="3:15" />
+    {
+      sortedBlogs.map((blog) => {
+        const pageSlug = blog.slug.split("/").pop();
+        console.log(pageSlug);
+        return (
+          <TrackListItem
+            title={blog.data.title}
+            runtime={blog.data.runtime}
+            href={`/${blog.data.albumslug}/${pageSlug}`}
+          />
+        );
+      })
+    }
   </ul>
 </div>
 <style>
