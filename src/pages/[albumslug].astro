@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/default.astro";
+import TrackList from "../components/TrackList.astro";
+import { getCollection } from "astro:content";
+import { albums } from "../data/album-data";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+
+  // Get unique subdirectories
+  const subdirectories = [
+    ...new Set(
+      allPosts.map((post) => post.slug.split("/")[0]).filter((dir) => dir) // Remove empty strings
+    ),
+  ];
+
+  // Generate a path for each subdirectory
+  return subdirectories.map((subdirectory) => ({
+    params: { albumslug: subdirectory },
+    props: {
+      posts: allPosts.filter((post) =>
+        post.slug.startsWith(`${subdirectory}/`)
+      ),
+    },
+  }));
+}
+
+const { posts } = Astro.props;
+const albumDetails = albums.find(
+  (album) => album.slug === posts[0].data.albumslug
+);
+---
+
+<Layout>
+  {
+    albumDetails ? (
+      <div class="container">
+        <div class="album-summary">
+          <div class="cover-image">
+            <img src={albumDetails.cover} alt="" />
+          </div>
+          <p class="title">{albumDetails.title}</p>
+          <div class="date-runtime">
+            <p class="release-date">Album • {albumDetails.year}</p>
+            <p class="runtime">{posts.length} Blogs • XXXXXX minutes</p>
+          </div>
+          <p class="blurb">{albumDetails.blurb}</p>
+        </div>
+        <TrackList blogs={posts} />
+      </div>
+    ) : (
+      <div class="container">
+        <h1>ERROR</h1>
+      </div>
+    )
+  }
+</Layout>
+
+<style>
+  /* Mobile Styles */
+  body {
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-self: center;
+    justify-items: center;
+    padding: 6rem 1rem;
+    gap: 6rem 4rem;
+    color: var(--text);
+    font-size: var(--body-mobile);
+    font-family: "Manrope";
+  }
+
+  .album-summary {
+    height: fit-content;
+    text-align: center;
+    min-width: 150px;
+    max-width: 300px;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: var(--title-mobile);
+    font-family: "Domine";
+    font-weight: 700;
+  }
+
+  .date-runtime,
+  .blurb {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .cover-image {
+    max-width: 100%;
+    overflow: hidden;
+    place-self: center;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 810px) {
+    .container {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      font-size: var(--body-desktop);
+      max-width: 800px;
+    }
+
+    .title {
+      font-size: var(--title-medium-desktop);
+    }
+  }
+</style>
