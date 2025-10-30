@@ -35,7 +35,7 @@ const { Content } = await post.render();
       <div class="divider"></div>
       <Content />
     </div>
-    <div class="up-next collapse">
+    <div class="up-next">
       <svg
         id="up-next-menu-button"
         xmlns="http://www.w3.org/2000/svg"
@@ -61,11 +61,13 @@ const { Content } = await post.render();
   .container {
     position: relative;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     font-size: var(--body-mobile);
   }
 
   .blog {
+    max-width: 70ch;
     font-family: "Domine";
     color: var(--text);
     line-height: 1.5;
@@ -140,6 +142,7 @@ const { Content } = await post.render();
 
     .blog {
       padding-bottom: 1rem;
+      margin: 0 auto;
     }
 
     .up-next {
@@ -152,7 +155,7 @@ const { Content } = await post.render();
       }
 
       & svg {
-        transform: rotate(0deg);
+        transform: rotate(180deg);
       }
     }
 
@@ -165,7 +168,7 @@ const { Content } = await post.render();
         display: none;
       }
       & svg {
-        transform: rotate(180deg);
+        transform: rotate(0deg);
       }
     }
   }
