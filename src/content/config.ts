@@ -17,6 +17,7 @@ const singles_schema = {
     schema: z.object({
       title: z.string(),
       date: z.string(),
+      features: z.boolean(),
       runtime: z.string(),
     }),
   }),
