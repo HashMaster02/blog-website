@@ -1,8 +1,9 @@
 ---
 title: How To Fuel Creativity
-slug: fuel-creativity
-album: Learner's Toolkit Deluxe Edition
+album: Learner's Toolkit
+albumslug: learners-toolkit
 runtime: 5:34
+track: 1
 ---
 
 Since I started this blog, one thing I’ve needed to develop is a system which allows me to have a constant stream of ideas to write about. This has proven to be difficult as I am someone who doesn’t consider himself particularly “creative”, but over the last few months I’ve been able to build somewhat of a framework to do so. The framework isn’t specific to writing, and can be used in other areas too, such as coming up with project ideas. To cut to the chase, here are the key ways I stay creative in my writing and other personal projects.

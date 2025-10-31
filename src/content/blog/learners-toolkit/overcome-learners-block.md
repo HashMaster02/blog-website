@@ -1,8 +1,9 @@
 ---
 title: Overcome Learner’s Block
-slug: learners-block
-album: Learner's Toolkit Deluxe Edition
+album: Learner's Toolkit
+albumslug: learners-toolkit
 runtime: 6:50
+track: 3
 ---
 
 When people stumble across something they want to do, often an inner monologue will begin where they convince themselves that they will never be successful if they pursued it. Whether it be starting a blog, a YouTube channel, learning graphic design or writing a book, a voice inside of their head begins bargaining with them that it isn’t worth the effort because they will never succeed at it. Trust me when I say that I have experienced this many times in my life, but as a result, I have also figured out how to get over this initial block and simply lunge into the task and get going. I want to share 3 tips that I personally use to get over what I call “Learner’s Block”, which is the mental barrier that keeps you from whatever you want to learn or do.
