@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import { formatTime, parseTime } from "../utils/format-timestamps";
+
+let posts = await getCollection("singles");
+const { showFeatured } = Astro.props;
+
+if (showFeatured) {
+  posts = posts.filter((post) => post.data.featured);
+}
+---
+
+<ul>
+  {
+    posts.map((post) => {
+      return (
+        <li>
+          <a href={`/singles/${post.slug}`}>{post.data.title}</a>
+          <small class="date-runtime">
+            <p>
+              {formatTime(parseTime(post.data.runtime))} • {post.data.date}
+            </p>
+          </small>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  ul {
+    display: grid;
+    gap: 1.5rem 0;
+  }
+
+  li {
+    a {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: var(--title-mobile);
+      font-style: italic;
+    }
+  }
+
+  small {
+    font-family: "Manrope";
+    color: var(--accent);
+  }
+</style>
