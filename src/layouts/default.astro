@@ -21,8 +21,6 @@ const props = Astro.props;
       <nav>
         <a href="/">
           <svg
-            width="285"
-            height="40"
             viewBox="0 0 285 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +65,9 @@ const props = Astro.props;
         </a>
         <div class="nav-links-desktop">
           <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/singles">Singles</a></li>
-            <li><a href="#">Albums</a></li>
+            <li><a href="#">About</a></li>
           </ul>
         </div>
         <div class="nav-links-mobile">
@@ -86,9 +84,9 @@ const props = Astro.props;
             ></path></svg
           >
           <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/singles">Singles</a></li>
-            <li><a href="#">Albums</a></li>
+            <li><a href="#">About</a></li>
           </ul>
         </div>
         <svg
@@ -148,17 +146,22 @@ const props = Astro.props;
       <div class="footer-explore">
         <p class="footer-section-title">Explore</p>
         <ul>
-          <li><a href="#">Blog</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/singles">Singles</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Albums</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <p class="footer-section-title">Contact</p>
         <ul>
-          <li><a href="#">Contact Me</a></li>
-          <li><a href="#">Github</a></li>
-          <li><a href="#">LinkedIn</a></li>
+          <li>
+            <a href="https://github.com/HashMaster02" target="_blank">Github</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/hashirshah/" target="_blank"
+              >LinkedIn</a
+            >
+          </li>
         </ul>
       </div>
     </footer>
@@ -354,6 +357,13 @@ const props = Astro.props;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      a {
+        svg {
+          width: 100%;
+          max-width: 285px;
+        }
+      }
     }
 
     #hamburger-icon:active {
