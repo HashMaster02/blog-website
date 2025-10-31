@@ -12,6 +12,17 @@ const blogs_schema = {
   }),
 };
 
+const singles_schema = {
+  blogs: defineCollection({
+    schema: z.object({
+      title: z.string(),
+      date: z.string(),
+      runtime: z.string(),
+    }),
+  }),
+};
+
 export const collections = {
   blog: blogs_schema,
+  singles: singles_schema,
 };
