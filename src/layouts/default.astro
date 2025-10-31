@@ -169,12 +169,8 @@ const props = Astro.props;
 <style is:global>
   :root {
     /* Colors */
-    /* --text: hsla(0, 0%, 4%, 1);
-    --background: hsla(150, 100%, 91%, 1);
-    --secondary: hsla(83, 9%, 29%, 1);
-    --primary: hsla(168, 26%, 69%, 1);
-    --accent: hsla(184, 57%, 72%, 1); */
 
+    --neutral: rgb(200, 200, 200);
     --text: rgb(238, 231, 231);
     --background: rgb(31, 31, 31);
     --primary: rgb(198, 175, 174);
@@ -350,6 +346,7 @@ const props = Astro.props;
   header {
     padding: 0.5rem var(--global-side-padding-mobile);
     background-color: var(--background);
+    border-bottom: 1px solid var(--neutral);
 
     nav {
       display: flex;
@@ -422,6 +419,8 @@ const props = Astro.props;
     gap: 2rem;
     background-color: var(--background);
     padding: 1rem var(--global-side-padding-mobile);
+
+    border-top: 1px solid var(--neutral);
 
     svg {
       max-width: 150px;
