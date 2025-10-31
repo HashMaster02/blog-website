@@ -1,9 +1,9 @@
 ---
-
+const { title } = Astro.props;
 ---
 
 <div class="shelf">
-  <h1>Albums</h1>
+  <h1>{title}</h1>
   <div class="album-scroller">
     <slot />
   </div>
