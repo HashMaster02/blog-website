@@ -5,6 +5,7 @@ export const albums = [
     type: "album",
     slug: "learners-toolkit",
     cover: "/blog/learners-toolkit/learners_toolkit_cover.jpg",
-    blurb: "This is the blurb for Learners Toolkit...",
+    blurb:
+      "From choosing a project to making consistent progress, the Learner's Toolkit is my bible for self-teaching.",
   },
 ];
