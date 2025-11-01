@@ -1,12 +1,21 @@
 ---
 import Layout from "../layouts/default.astro";
 import SinglesList from "../components/SinglesList.astro";
+import { sortDateAscending } from "../utils/sorting";
+import { getCollection } from "astro:content";
+
+let singles = (await getCollection("singles")).sort(sortDateAscending);
+let albums = (await getCollection("blog")).sort(sortDateAscending);
 ---
 
 <Layout>
   <div class="container">
     <h1>Singles</h1>
-    <SinglesList showFeatured={false} />
+    <SinglesList posts={singles} showFeatured={false} hrefBase="/singles" />
+  </div>
+  <div class="container">
+    <h1>From Albums</h1>
+    <SinglesList posts={albums} showFeatured={false} hrefBase="" />
   </div>
 </Layout>
 

@@ -4,6 +4,10 @@ import Album from "../components/Album.astro";
 import AlbumShelf from "../components/AlbumShelf.astro";
 import { albums } from "../data/album-data";
 import SinglesList from "../components/SinglesList.astro";
+import { getCollection } from "astro:content";
+import { sortDateAscending } from "../utils/sorting";
+
+let singles = (await getCollection("singles")).sort(sortDateAscending);
 ---
 
 <Layout>
@@ -23,6 +27,11 @@ import SinglesList from "../components/SinglesList.astro";
     }
   </AlbumShelf>
   <AlbumShelf title="Featured Singles">
-    <SinglesList showFeatured={true} />
+    <SinglesList
+      posts={singles}
+      showFeatured={true}
+      featured={true}
+      hrefBase="/singles"
+    />
   </AlbumShelf>
 </Layout>

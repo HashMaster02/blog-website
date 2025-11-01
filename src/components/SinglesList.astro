@@ -1,10 +1,7 @@
 ---
-import { getCollection } from "astro:content";
 import { formatTime, parseTime } from "../utils/format-timestamps";
-import { sortDateAscending } from "../utils/sorting";
 
-let posts = (await getCollection("singles")).sort(sortDateAscending);
-const { showFeatured } = Astro.props;
+let { posts, showFeatured, hrefBase } = Astro.props;
 
 if (showFeatured) {
   posts = posts.filter((post) => post.data.featured);
@@ -16,7 +13,7 @@ if (showFeatured) {
     posts.map((post) => {
       return (
         <li>
-          <a href={`/singles/${post.slug}`}>{post.data.title}</a>
+          <a href={`${hrefBase}/${post.slug}`}>{post.data.title}</a>
           <small class="date-runtime">
             <p>
               {formatTime(parseTime(post.data.runtime))} • {post.data.date}
