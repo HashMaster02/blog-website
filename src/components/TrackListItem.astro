@@ -15,6 +15,7 @@ const { title, runtime, href } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 0.5rem 2rem;
+    align-content: center;
     justify-content: space-between;
   }
 
@@ -31,11 +32,5 @@ const { title, runtime, href } = Astro.props;
 
   p:hover {
     text-decoration: underline;
-  }
-
-  @media screen and (min-width: 810px) {
-    li {
-      align-items: center;
-    }
   }
 </style>
