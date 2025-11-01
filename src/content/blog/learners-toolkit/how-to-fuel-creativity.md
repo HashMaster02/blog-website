@@ -2,6 +2,7 @@
 title: How To Fuel Creativity
 album: Learner's Toolkit
 albumslug: learners-toolkit
+date: Mar 7, 2023
 runtime: 5:34
 track: 1
 ---

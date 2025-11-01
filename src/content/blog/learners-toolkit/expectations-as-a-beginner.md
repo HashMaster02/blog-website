@@ -2,6 +2,7 @@
 title: Expectations as a Beginner
 album: Learner's Toolkit
 albumslug: learners-toolkit
+date: Jul 20, 2022
 runtime: 6:15
 track: 5
 ---

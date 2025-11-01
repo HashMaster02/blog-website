@@ -6,6 +6,7 @@ const blogs_schema = {
       title: z.string(),
       album: z.string(),
       albumslug: z.string(),
+      date: z.string(),
       runtime: z.string(),
       track: z.number(),
     }),

@@ -2,6 +2,7 @@
 title: The Trinity of Progress
 album: Learner's Toolkit
 albumslug: learners-toolkit
+date: Dec 4, 2022
 runtime: 7:39
 track: 4
 ---

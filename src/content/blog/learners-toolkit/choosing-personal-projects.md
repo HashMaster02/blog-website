@@ -2,6 +2,7 @@
 title: Choosing Personal Projects
 album: Learner's Toolkit
 albumslug: learners-toolkit
+date: Aug 1, 2022
 runtime: 5:59
 track: 2
 ---
